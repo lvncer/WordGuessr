@@ -1,0 +1,132 @@
+[
+  {
+    "first_letter": "a",
+    "last_letter": "e",
+    "words": ["apple", "axe", "ape", "agree", "able", "adore", "acre", "age"]
+  },
+  {
+    "first_letter": "b",
+    "last_letter": "e",
+    "words": ["bike", "bake", "bore", "bore", "bare", "blue", "babe", "be"]
+  },
+  {
+    "first_letter": "c",
+    "last_letter": "e",
+    "words": ["cake", "cane", "care", "case", "cope", "cue", "cite", "core"]
+  },
+  {
+    "first_letter": "d",
+    "last_letter": "e",
+    "words": ["date", "dare", "dice", "done", "dune", "dear", "dote"]
+  },
+  {
+    "first_letter": "e",
+    "last_letter": "e",
+    "words": ["ease", "edge", "eye", "even", "else", "enclose", "emote"]
+  },
+  {
+    "first_letter": "f",
+    "last_letter": "e",
+    "words": ["face", "fate", "fine", "fire", "flee", "false", "flame"]
+  },
+  {
+    "first_letter": "g",
+    "last_letter": "e",
+    "words": ["gate", "grape", "game", "give", "glove", "gaze"]
+  },
+  {
+    "first_letter": "h",
+    "last_letter": "e",
+    "words": ["hate", "have", "hope", "here", "hide", "hire"]
+  },
+  {
+    "first_letter": "i",
+    "last_letter": "e",
+    "words": ["ice", "idea", "invite", "image", "inside", "induce"]
+  },
+  {
+    "first_letter": "j",
+    "last_letter": "e",
+    "words": ["joke", "jive", "june"]
+  },
+  {
+    "first_letter": "k",
+    "last_letter": "e",
+    "words": ["kite", "knife", "keel"]
+  },
+  {
+    "first_letter": "l",
+    "last_letter": "e",
+    "words": ["lake", "late", "love", "lone", "lime", "lure"]
+  },
+  {
+    "first_letter": "m",
+    "last_letter": "e",
+    "words": ["mate", "more", "mute", "move", "make", "maze"]
+  },
+  {
+    "first_letter": "n",
+    "last_letter": "e",
+    "words": ["note", "nice", "none", "neve", "nine", "niche"]
+  },
+  {
+    "first_letter": "o",
+    "last_letter": "e",
+    "words": ["one", "over", "open", "owe", "olive"]
+  },
+  {
+    "first_letter": "p",
+    "last_letter": "e",
+    "words": ["page", "pipe", "pure", "pore", "plane"]
+  },
+  {
+    "first_letter": "q",
+    "last_letter": "e",
+    "words": ["quake", "quate"]
+  },
+  {
+    "first_letter": "r",
+    "last_letter": "e",
+    "words": ["race", "rise", "roam", "rare", "rope"]
+  },
+  {
+    "first_letter": "s",
+    "last_letter": "e",
+    "words": ["save", "side", "sale", "site", "sew", "sore"]
+  },
+  {
+    "first_letter": "t",
+    "last_letter": "e",
+    "words": ["take", "tale", "time", "tone", "tune", "tire"]
+  },
+  {
+    "first_letter": "u",
+    "last_letter": "e",
+    "words": ["use", "unite", "urge"]
+  },
+  {
+    "first_letter": "v",
+    "last_letter": "e",
+    "words": ["vote", "vibe", "vase", "vane"]
+  },
+  {
+    "first_letter": "w",
+    "last_letter": "e",
+    "words": ["wave", "wide", "wore", "wise", "wage"]
+  },
+  {
+    "first_letter": "x",
+    "last_letter": "e",
+    "words": ["axe"]
+  },
+  {
+    "first_letter": "y",
+    "last_letter": "e",
+    "words": ["yoke", "yule"]
+  },
+  {
+    "first_letter": "z",
+    "last_letter": "e",
+    "words": ["zone", "zine"]
+  }
+]

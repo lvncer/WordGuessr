@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>単語推測ゲーム</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+      <h1 class="text-2xl font-bold mb-4">単語推測ゲーム</h1>
+      <form method="POST">
+        <div class="mb-4">
+          <label for="first_letter" class="block text-lg">最初の文字</label>
+          <input
+            type="text"
+            id="first_letter"
+            name="first_letter"
+            value="{{ first_letter }}"
+            class="w-full p-2 border border-gray-300 rounded-md mt-2"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="last_letter" class="block text-lg">最後の文字</label>
+          <input
+            type="text"
+            id="last_letter"
+            name="last_letter"
+            value="{{ last_letter }}"
+            class="w-full p-2 border border-gray-300 rounded-md mt-2"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="guess" class="block text-lg">推測する単語を入力</label>
+          <input
+            type="text"
+            id="guess"
+            name="guess"
+            class="w-full p-2 border border-gray-300 rounded-md mt-2"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white p-2 rounded-md mt-4"
+        >
+          推測する
+        </button>
+      </form>
+      <button
+        type="submit"
+        class="w-full bg-green-500 text-white p-2 rounded-md mt-4"
+        onclick="window.location.href='/history';"
+      >
+        履歴を見る
+      </button>
+      <button
+        type="submit"
+        class="w-full bg-red-500 text-white p-2 rounded-md mt-4"
+        onclick="window.location.reload();"
+      >
+        単語を変更する
+      </button>
+    </div>
+  </body>
+</html>

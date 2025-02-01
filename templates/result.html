@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>結果</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+      <h1 class="text-2xl font-bold mb-4">結果</h1>
+      <p>最初の文字: {{ first_letter }}</p>
+      <p>最後の文字: {{ last_letter }}</p>
+      <p>あなたの推測: {{ guess }}</p>
+      <p>結果: {{ correct }}</p>
+      <p>有効な単語: {{ valid_guesses }}</p>
+      <a href="/" class="text-blue-500">ゲームに戻る</a>
+    </div>
+  </body>
+</html>

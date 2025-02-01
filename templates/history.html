@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>履歴 - 単語推測ゲーム</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+      <h1 class="text-2xl font-bold mb-4">推測履歴</h1>
+      <table class="min-w-full table-auto">
+        <thead>
+          <tr>
+            <th class="px-4 py-2 text-left">推測</th>
+            <th class="px-4 py-2 text-left">正解</th>
+            <th class="px-4 py-2 text-left">日時</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in history_data %}
+          <tr>
+            <td class="border px-4 py-2">{{ entry[1] }}</td>
+            <td class="border px-4 py-2">{{ entry[2] }}</td>
+            <td class="border px-4 py-2">{{ entry[3] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/" class="mt-4 text-blue-500">ゲームに戻る</a>
+    </div>
+  </body>
+</html>
