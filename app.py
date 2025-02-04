@@ -55,7 +55,8 @@ def index():
         # 最初と最後の文字に一致する単語リストを取得
         valid_guesses = []
         for data in word_data:
-            if data['first_letter'] == first_letter and data['last_letter'] == last_letter:
+            if (data['first_letter'] == first_letter and
+                    data['last_letter'] == last_letter):
                 valid_guesses = data['words']
                 break
 
