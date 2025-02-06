@@ -1,0 +1,22 @@
+@startuml wordguessr
+
+actor User
+participant "Flask App" as Flask
+participant "Database" as DB
+
+User -> Flask: GET /
+Flask -> Flask: Select random first/last letter
+Flask -> User: Render index.html
+
+User -> Flask: POST /
+Flask -> Flask: Validate input
+Flask -> DB: INSERT INTO history (guess, correct, timestamp)
+DB -> Flask: Acknowledge insert
+Flask -> User: Render result.html
+
+User -> Flask: GET /history
+Flask -> DB: SELECT * FROM history
+DB -> Flask: Return history data
+Flask -> User: Render history.html
+
+@enduml

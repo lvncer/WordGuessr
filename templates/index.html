@@ -9,31 +9,88 @@
       rel="stylesheet"
     />
   </head>
+  <script>
+    let timeLeft = 10; // 制限時間（秒）
+
+    function updateTimer() {
+      document.getElementById("timer").innerText = timeLeft;
+      if (timeLeft <= 0) {
+        submitTimeoutForm();
+      } else {
+        timeLeft--;
+        setTimeout(updateTimer, 1000);
+      }
+    }
+
+    function submitTimeoutForm() {
+      let form = document.createElement("form");
+      form.method = "POST";
+      form.action = "/";
+
+      // first_letter を送信
+      let firstLetterInput = document.createElement("input");
+      firstLetterInput.type = "hidden";
+      firstLetterInput.name = "first_letter";
+      firstLetterInput.value = document.getElementById("first_letter").value;
+      form.appendChild(firstLetterInput);
+
+      // last_letter を送信
+      let lastLetterInput = document.createElement("input");
+      lastLetterInput.type = "hidden";
+      lastLetterInput.name = "last_letter";
+      lastLetterInput.value = document.getElementById("last_letter").value;
+      form.appendChild(lastLetterInput);
+
+      // タイムアウトフラグを送信
+      let timeoutInput = document.createElement("input");
+      timeoutInput.type = "hidden";
+      timeoutInput.name = "timeout";
+      timeoutInput.value = "1";
+      form.appendChild(timeoutInput);
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+
+    window.onload = function () {
+      updateTimer();
+    };
+  </script>
   <body class="bg-gray-100">
     <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h1 class="text-2xl font-bold mb-4">単語推測ゲーム</h1>
+      <h1 class="text-center text-3xl font-bold mb-10">Word Guessr</h1>
+
+      <!-- 残り時間表示 -->
+      <div class="text-center text-xl font-bold text-red-500 mb-10">
+        残り時間: <span id="timer">60</span> 秒
+      </div>
+
       <form method="POST">
-        <div class="mb-4">
-          <label for="first_letter" class="block text-lg">最初の文字</label>
-          <input
-            type="text"
-            id="first_letter"
-            name="first_letter"
-            value="{{ first_letter }}"
-            class="w-full p-2 border border-gray-300 rounded-md mt-2"
-            required
-          />
-        </div>
-        <div class="mb-4">
-          <label for="last_letter" class="block text-lg">最後の文字</label>
-          <input
-            type="text"
-            id="last_letter"
-            name="last_letter"
-            value="{{ last_letter }}"
-            class="w-full p-2 border border-gray-300 rounded-md mt-2"
-            required
-          />
+        <div class="flex gap-4">
+          <div class="mb-4 flex-1">
+            <label for="first_letter" class="block text-lg">最初の文字</label>
+            <input
+              type="text"
+              id="first_letter"
+              name="first_letter"
+              value="{{ first_letter }}"
+              class="w-32 p-2 border border-gray-300 rounded-md mt-2 text-2xl text-center"
+              required
+              readonly
+            />
+          </div>
+          <div class="mb-4 flex-1">
+            <label for="last_letter" class="block text-lg">最後の文字</label>
+            <input
+              type="text"
+              id="last_letter"
+              name="last_letter"
+              value="{{ last_letter }}"
+              class="w-32 p-2 border border-gray-300 rounded-md mt-2 text-2xl text-center"
+              required
+              readonly
+            />
+          </div>
         </div>
         <div class="mb-4">
           <label for="guess" class="block text-lg">推測する単語を入力</label>

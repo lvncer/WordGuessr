@@ -48,7 +48,7 @@ word_data = load_word_data()
 def index():
     if request.method == 'POST':
         # フォームからの入力を受け取る
-        guess = request.form['guess']
+        guess = request.form.get('guess', '')
         first_letter = request.form['first_letter']
         last_letter = request.form['last_letter']
 
@@ -62,6 +62,9 @@ def index():
 
         # 正解を判定
         correct = 'Yes' if guess in valid_guesses else 'No'
+
+        # 正解した際にその単語の長さに合わせた得点を計算する
+        score = len(guess) if correct == "Yes" else 0
 
         # 結果をデータベースに保存
         conn = get_db()
@@ -81,7 +84,8 @@ def index():
             correct=correct,
             first_letter=first_letter,
             last_letter=last_letter,
-            valid_guesses=valid_guesses
+            valid_guesses=valid_guesses,
+            score=score
         )
 
     # ランダムに最初と最後の文字を選ぶ

@@ -11,13 +11,55 @@
   </head>
   <body class="bg-gray-100">
     <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h1 class="text-2xl font-bold mb-4">結果</h1>
-      <p>最初の文字: {{ first_letter }}</p>
-      <p>最後の文字: {{ last_letter }}</p>
-      <p>あなたの推測: {{ guess }}</p>
-      <p>結果: {{ correct }}</p>
-      <p>有効な単語: {{ valid_guesses }}</p>
-      <a href="/" class="text-blue-500">ゲームに戻る</a>
+      <h1 class="text-center text-3xl font-bold mb-8">結果</h1>
+      <div class="space-y-4">
+        <div class="flex gap-4">
+          <div class="flex-1 p-4 bg-gray-50 rounded-lg">
+            <p class="text-lg font-medium text-gray-600">最初の文字</p>
+            <p class="text-2xl font-bold text-center mt-2">
+              {{ first_letter }}
+            </p>
+          </div>
+          <div class="flex-1 p-4 bg-gray-50 rounded-lg">
+            <p class="text-lg font-medium text-gray-600">最後の文字</p>
+            <p class="text-2xl font-bold text-center mt-2">{{ last_letter }}</p>
+          </div>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <p class="text-lg font-medium text-gray-600">あなたの推測</p>
+          <p class="text-2xl font-bold text-center mt-2">{{ guess }}</p>
+        </div>
+        <div
+          class="p-4 {{ 'bg-green-100' if correct == 'Yes' else 'bg-red-100' }} rounded-lg"
+        >
+          <p
+            class="text-lg font-medium {{ 'text-green-600' if correct == 'Yes' else 'text-red-600' }}"
+          >
+            結果
+          </p>
+          <p class="text-2xl font-bold text-center mt-2">
+            {{ '正解！' if correct == 'Yes' else '不正解...' }}
+          </p>
+        </div>
+        {% if correct == 'Yes' %}
+        <div class="p-4 bg-green-50 rounded-lg">
+          <p class="text-lg font-medium text-green-600">スコア</p>
+          <p class="text-2xl font-bold text-center mt-2">{{ score }} 点</p>
+        </div>
+        {% endif %}
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <p class="text-lg font-medium text-gray-600">有効な単語</p>
+          <p class="text-lg text-center mt-2">{{ valid_guesses|join(', ') }}</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a
+          href="/"
+          class="inline-block px-6 py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
+        >
+          ゲームに戻る
+        </a>
+      </div>
     </div>
   </body>
 </html>

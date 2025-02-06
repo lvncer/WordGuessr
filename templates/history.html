@@ -9,28 +9,38 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-100">
-    <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h1 class="text-2xl font-bold mb-4">推測履歴</h1>
-      <table class="min-w-full table-auto">
-        <thead>
-          <tr>
-            <th class="px-4 py-2 text-left">推測</th>
-            <th class="px-4 py-2 text-left">正解</th>
-            <th class="px-4 py-2 text-left">日時</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for entry in history_data %}
-          <tr>
-            <td class="border px-4 py-2">{{ entry[1] }}</td>
-            <td class="border px-4 py-2">{{ entry[2] }}</td>
-            <td class="border px-4 py-2">{{ entry[3] }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      <a href="/" class="mt-4 text-blue-500">ゲームに戻る</a>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="max-w-2xl mx-auto mt-10 p-8 bg-white shadow-xl rounded-lg">
+      <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">推測履歴</h1>
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto border-collapse">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider border-b">推測</th>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider border-b">正解</th>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider border-b">日時</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {% for entry in history_data %}
+            <tr class="hover:bg-gray-50 transition-colors duration-200">
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ entry[1] }}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm">
+                <span class="px-3 py-1 rounded-full text-sm font-semibold {{ 'bg-green-100 text-green-800' if entry[2] == 'Yes' else 'bg-red-100 text-red-800' }}">
+                  {{ '正解' if entry[2] == 'Yes' else '不正解' }}
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{{ entry[3] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/" class="inline-block px-6 py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition-colors">
+          ゲームに戻る
+        </a>
+      </div>
     </div>
   </body>
 </html>
